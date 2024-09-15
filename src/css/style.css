@@ -1,0 +1,358 @@
+/* Reseta estilos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth; /* Rolagem suave */
+}
+
+/* Define a fonte padrão e o espaçamento superior */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    padding-top: 60px;
+    color: inherit; /* Garante que a cor do texto seja herdada */
+}
+
+/* Tema claro */
+body.light {
+    background-color: #ffffff; /* Cor de fundo clara */
+    color: #333; /* Texto escuro para melhor contraste */
+}
+
+body.light header,
+body.light footer {
+    background-color: #f0f0f0; /* Tom de branco levemente mais escuro para o cabeçalho e rodapé */
+}
+
+body.light .projeto {
+    background-color: #f0f0f0; /* Fundo claro para os projetos */
+    color: #333; /* Texto escuro */
+}
+
+body.light #inicio h1,
+body.light .projeto h3 {
+    color: #333; /* Cor dos títulos no tema claro */
+}
+
+body.light #inicio p,
+body.light .projeto p {
+    color: #333; /* Cor do texto no tema claro */
+}
+
+body.light .projeto-link {
+    color: #333; /* Cor do link dos projetos no tema claro */
+    border: 2px solid #333; /* Cor da borda dos links no tema claro */
+}
+
+body.light .projeto-link:hover {
+    background-color: #333; /* Fundo do link ao passar o mouse no tema claro */
+    color: #ffffff; /* Cor do texto do link ao passar o mouse no tema claro */
+}
+
+/* Tema escuro */
+body.dark {
+    background-color: #1e1e1e;
+    color: #e0e0e0; /* Texto claro para melhor contraste */
+}
+
+body.dark header,
+body.dark footer,
+body.dark .projeto {
+    background-color: #171717; /* Fundo escuro para contraste com o texto claro */
+    color: #e0e0e0; /* Texto claro */
+}
+
+body.dark #inicio h1,
+body.dark .projeto h3 {
+    color: #00ffe5; /* Cor dos títulos no tema escuro */
+}
+
+body.dark #inicio p,
+body.dark .projeto p {
+    color: #e0e0e0; /* Cor do texto no tema escuro */
+}
+
+body.dark .projeto-link {
+    color: #00ffe5; /* Cor do link dos projetos no tema escuro */
+    border: 2px solid #00ffe5; /* Cor da borda dos links no tema escuro */
+}
+
+body.dark .projeto-link:hover {
+    background-color: #00ffe5; /* Fundo do link ao passar o mouse no tema escuro */
+    color: #1e1e1e; /* Cor do texto do link ao passar o mouse no tema escuro */
+}
+
+/* Estilo do cabeçalho */
+header {
+    background-color: #f0f0f0; /* Cor de fundo para o cabeçalho no tema claro */
+    color: inherit;
+    border-bottom: 1px solid #444;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centraliza os itens do cabeçalho */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header nav {
+    margin: 0 auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os itens da navegação */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: inherit; /* Cor dos links baseada no tema */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #0056b3; /* Azul mais escuro ao passar o mouse no tema claro */
+    border-bottom: 2px solid #0056b3;
+}
+
+/* Botão de alternar tema */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: inherit; /* Cor do botão baseada no tema */
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilo da seção 'Início' */
+#inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh; /* Reduz a altura para evitar rolagem */
+    text-align: center;
+    padding: 10px;
+}
+
+#inicio img {
+    width: 180px; /* Reduz o tamanho da imagem */
+    height: 180px; /* Corrige a altura da imagem */
+    border-radius: 50%;
+    margin-bottom: 10px; /* Reduz o espaço abaixo da foto */
+    object-fit: cover;
+}
+
+#inicio h1 {
+    font-size: 30px; /* Reduz o tamanho da fonte */
+    color: inherit; /* Cor do título baseada no tema */
+    margin-bottom: 10px;
+}
+
+#inicio p {
+    font-size: 18px; /* Reduz o tamanho da fonte */
+    margin: 10px 0;
+    max-width: 650px; /* Reduz a largura máxima do texto */
+    color: inherit; /* Usa a cor do texto definida no body */
+}
+
+/* Estilo da seção de projetos */
+.projetos {
+    padding: 20px; /* Reduz o padding da seção para compactar mais */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    max-width: 715px;
+    margin-top: 50px; /* Ajusta a margem superior para reduzir o espaço acima da seção */
+}
+
+/* Contêiner dos projetos */
+.projeto-container {
+    display: flex; /* Exibe os projetos em linha */
+    flex-wrap: nowrap; /* Evita quebra de linha dos projetos */
+    gap: 20px; /* Ajusta o espaçamento entre os projetos */
+    overflow-x: auto; /* Permite rolagem horizontal dos projetos */
+    justify-content: flex-start; /* Centraliza os projetos horizontalmente */
+    width: 100%; /* Garante que o contêiner ocupe toda a largura disponível */
+    margin-top: 50px; /* Reduz a margem superior para diminuir o espaço entre o contêiner e o título */
+}
+
+/* Estilo dos projetos individuais */
+.projeto {
+    background-color: inherit; /* Fundo dos projetos baseado no tema */
+    border-radius: 8px;
+    padding: 45px; /* Reduz o padding dos projetos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 0 0 auto; /* Não permite que os projetos se estiquem, mas permite rolagem horizontal */
+    width: 300px; /* Largura dos projetos */
+    margin-bottom: 20px; /* Espaçamento vertical entre os projetos */
+}
+
+/* Botão "Ver Projeto" fixo no centro da parte inferior dos projetos */
+.projetos .ver-projeto-botao {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00ffe5; /* Cor do botão baseada no tema escuro */
+    color: #171717; /* Cor do texto do botão no tema escuro */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projetos .ver-projeto-botao:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse no tema claro */
+    color: #ffffff; /* Cor do texto do botão ao passar o mouse */
+}
+
+.projeto h3 {
+    color: inherit; /* Cor dos títulos dos projetos baseada no tema */
+    font-size: 22px;
+    margin-bottom: 10px; /* Reduz o espaço abaixo do título do projeto */
+}
+
+.projeto p {
+    font-size: 16px; /* Tamanho da fonte para a descrição dos projetos */
+    margin-bottom: 10px;
+}
+
+.projeto-link {
+    color: inherit; /* Cor do link dos projetos baseada no tema */
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projeto-link:hover {
+    color: inherit; /* Cor do texto do link ao passar o mouse baseada no tema */
+    background-color: inherit; /* Cor de fundo do link ao passar o mouse baseada no tema */
+}
+
+/* Personalização da barra de rolagem para o tema claro */
+body.light ::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+body.light ::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Cor do fundo da trilha da barra de rolagem */
+}
+
+body.light ::-webkit-scrollbar-thumb {
+    background: #c0c0c0; /* Cor da parte deslizante da barra de rolagem */
+    border-radius: 10px; /* Arredondamento dos cantos da barra de rolagem */
+}
+
+body.light ::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0; /* Cor da parte deslizante ao passar o mouse */
+}
+
+/* Personalização da barra de rolagem para o tema escuro */
+body.dark ::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+body.dark ::-webkit-scrollbar-track {
+    background: #171717; /* Cor do fundo da trilha da barra de rolagem */
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: #333333; /* Cor da parte deslizante da barra de rolagem */
+    border-radius: 10px; /* Arredondamento dos cantos da barra de rolagem */
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: #555555; /* Cor da parte deslizante ao passar o mouse */
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #f0f0f0; /* Cor de fundo para o rodapé no tema claro */
+    color: inherit;
+    padding: 20px;
+    text-align: center;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh; /* Reduz a altura para evitar rolagem */
+    text-align: center;
+    padding: 10px;
+    margin-top: 27px;
+}
+
+#contact p {
+    font-size: 18px; /* Reduz o tamanho da fonte */
+    margin: 10px 0;
+    max-width: 650px; /* Reduz a largura máxima do texto */
+    color: inherit; /* Usa a cor do texto definida no body */
+}
+
+#contact h1 {
+    font-size: 30px; /* Reduz o tamanho da fonte */
+    color: inherit; /* Cor do título baseada no tema */
+    margin-bottom: 5px;
+}
+
+.contact-links {
+    display: flex; /* Alinhamento horizontal */
+    justify-content: center; /* Centraliza os ícones */
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.contact-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.contact-links a img {
+    width: 32px;
+    height: 32px;
+}
+
+.contact-links .fa {
+    font-size: 32px;
+    transition: font-size 0.3s ease;
+}
+
+span {
+    margin-top: 15px; /* Espaço entre as imagens e o email */
+    font-size: 18px;
+}
